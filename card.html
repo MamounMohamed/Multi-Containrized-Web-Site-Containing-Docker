@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="card">
+	<img src="{{student[0][3]}}" width="100%" height="auto">
+	<span class="title">{{student[0][0]}}</span>
+	<span class="title">GPA: <span>{{student[0][2]}}</span></span>
+	<span class="title">ID: <span>{{student[0][1]}}</span></span>
+</div>
+{% endblock %}

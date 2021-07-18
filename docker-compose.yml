@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    image: ahmedfawzy2021/app
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+  db:
+    image: ahmedfawzy2021/db
+    build: ./db
+    ports:
+      - "3306:3306"

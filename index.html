@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+        <h1>Student Names and ID</h1>
+        <table>
+            <tr>
+                <th>NAME</th>
+                <th>ID</th>
+            </tr>
+            {% for item in ids %}
+			<tr>
+				<td>{{item[0]}}</td>
+				<td>{{item[1]}}</td>
+			</tr>
+			{% endfor %}
+        </table>
+        <div style="text-align: center;">
+            <form action="/search" method = "post" id="form1">
+                <h2>Search for student</h2>
+				<p>Enter ID for full student data</p>
+                <input type="text" id="id" name="id" placeholder="ID"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+		{% block content %}{% endblock %}
+</body>
+</html>
